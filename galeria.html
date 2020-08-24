@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<link rel="stylesheet" href="./css/CSS.css">
+    <title>fabricio minowa</title>
+
+<style >
+a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+  }
+  ::selection {
+    background-color: #f7ca18;
+    color: #1b1b1b;
+  }
+  nav {
+    width: 100%;
+    background-color: #0b0b0b;
+    position: fixed;
+    bottom: 0;
+    height: 100px;
+    overflow: hidden;
+  }
+  nav ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 140vw;
+  }
+  nav li {
+    margin: 0;
+    float: left;
+    display: inline-block;
+    height: 98px;
+    margin-bottom: 2px;
+    line-height: 100px;
+    width: 20vw;
+    text-align: center;
+    color: #555;
+    transition: background-color 0.5s 0.2s ease, color 0.3s ease;
+    cursor: pointer;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 800;
+    transform: translateY(100%);
+  }
+  nav li.active {
+    background-color: #151515;
+    color: #efefef;
+  }
+  nav li.active::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #f7ca18;
+  }
+  nav li:nth-child(1) {
+    animation: pop 0.5s 0.15s 1 forwards;
+  }
+  nav li:nth-child(2) {
+    animation: pop 0.5s 0.3s 1 forwards;
+  }
+  nav li:nth-child(3) {
+    animation: pop 0.5s 0.45s 1 forwards;
+  }
+  nav li:nth-child(4) {
+    animation: pop 0.5s 0.6s 1 forwards;
+  }
+  nav li:nth-child(5) {
+    animation: pop 0.5s 0.75s 1 forwards;
+  }
+  nav li:nth-child(6) {
+    animation: pop 0.5s 0.9s 1 forwards;
+  }
+  nav li:nth-child(7) {
+    animation: pop 0.5s 1.05s 1 forwards;
+  }
+  nav li:hover {
+    color: #ececec;
+  }
+  nav li:active {
+    background-color: #222;
+  }
+  nav li:nth-child(1):hover ~ .slide {
+    left: 0;
+  }
+  nav li:nth-child(2):hover ~ .slide {
+    left: 20vw;
+  }
+  nav li:nth-child(3):hover ~ .slide {
+    left: 40vw;
+  }
+  nav li:nth-child(4):hover ~ .slide {
+    left: 60vw;
+  }
+  nav li:nth-child(5):hover ~ .slide {
+    left: 80vw;
+  }
+  nav li:nth-child(6):hover ~ .slide {
+    left: 100vw;
+  }
+  nav li:nth-child(7):hover ~ .slide {
+    left: 120vw;
+  }
+  nav li.slide {
+    position: absolute;
+    left: -20vw;
+    top: 0;
+    background-color: #fff;
+    z-index: -1;
+    height: 2px;
+    margin-top: 98px;
+    transition: left 0.3s ease;
+    transform: translateY(0);
+  }
+  section {
+    background-color: #1b1b1b;
+    height: 100vh;
+    display: flex;
+  }
+  section .title {
+    max-width: 60%;
+    width: 100%;
+    align-self: center;
+    transform: translateY(-50px);
+    margin: 0 auto;
+    overflow: hidden;
+    padding-bottom: 10px;
+  }
+  section .title span {
+    display: inline-block;
+    font-size: 5vw;
+    color: #efefef;
+    width: 100%;
+    text-transform: uppercase;
+    transform: translateX(-100%);
+    animation: byBottom 1s ease both;
+    font-weight: 600;
+    letter-spacing: 0.25vw;
+  }
+  section .title span:last-child {
+    font-size: 1rem;
+    animation: byBottom 1s 0.25s ease both;
+  }
+  section .title span a {
+    position: relative;
+    display: inline-block;
+    margin-left: 0.5rem;
+    text-decoration: none;
+    color: #f7ca18;
+  }
+  section .title span a::after {
+    content: "";
+    height: 2px;
+    background-color: #f7ca18;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0;
+    animation: linkAfter 0.5s 1s ease both;
+  }
+  @-moz-keyframes pop {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @-webkit-keyframes pop {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @-o-keyframes pop {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes pop {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @-moz-keyframes byBottom {
+    0% {
+      transform: translateY(150%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @-webkit-keyframes byBottom {
+    0% {
+      transform: translateY(150%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @-o-keyframes byBottom {
+    0% {
+      transform: translateY(150%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes byBottom {
+    0% {
+      transform: translateY(150%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @-moz-keyframes linkAfter {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 30px;
+    }
+  }
+  @-webkit-keyframes linkAfter {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 30px;
+    }
+  }
+  @-o-keyframes linkAfter {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 30px;
+    }
+  }
+  @keyframes linkAfter {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 30px;
+    }
+
+}
+
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700,900);
+
+
+// colour stuff
+@white: #ffffff;
+@lightBG: #dce1df;
+@salmon: #ff6666;
+
+@teal: #0096a0;
+@tealMid: #0ebac7;
+@tealContrast: #33ffff;
+@tealShade:	#007c85;
+
+@darkGrey: #4f585e;
+
+body {
+  background: @lightBG;
+  color: @darkGrey;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+a.btn {
+  background: @teal;
+  border-radius: 4px;
+	box-shadow: 0 2px 0px 0 rgba(0,0,0,0.25);
+  color: @white;
+  display: inline-block;
+  padding: 6px 30px 8px;
+  position: relative;
+  text-decoration: none;
+	transition: all 0.1s 0s ease-out;
+}
+
+.no-touch a.btn:hover {
+  background: lighten(@teal,2.5);
+  box-shadow: 0px 8px 2px 0 rgba(0, 0, 0, 0.075);
+  transform: translateY(-2px);
+  transition: all 0.25s 0s ease-out;
+}
+
+.no-touch a.btn:active,
+a.btn:active {
+  background: darken(@teal,2.5);
+  box-shadow: 0 1px 0px 0 rgba(255,255,255,0.25);
+  transform: translate3d(0,1px,0);
+  transition: all 0.025s 0s ease-out;
+}
+
+div.cards {
+  margin: 80px auto;
+  max-width: 960px;
+  text-align: center;
+}
+
+div.card {
+  background: @white;
+  display: inline-block;
+  margin: 8px;
+  max-width: 300px;
+  perspective: 1000;
+  position: relative;
+  text-align: left;
+  transition: all 0.3s 0s ease-in;
+  width: 300px;
+  z-index: 1;
+
+  img {
+    max-width: 300px;
+  }
+
+  .card__image-holder {
+    background: rgba(0,0,0,0.1);
+    height: 0;
+    padding-bottom: 75%;
+  }
+
+  div.card-title {
+    background: @white;
+    padding: 6px 15px 10px;
+    position: relative;
+    z-index: 0;
+
+    a.toggle-info {
+      border-radius: 32px;
+      height: 32px;
+      padding: 0;
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      width: 32px;
+
+      span {
+        background: @white;
+        display: block;
+        height: 2px;
+        position: absolute;
+        top: 16px;
+        transition: all 0.15s 0s ease-out;
+        width: 12px;
+      }
+
+      span.left {
+        right: 14px;
+        transform: rotate(45deg);
+      }
+      span.right {
+        left: 14px;
+        transform: rotate(-45deg);
+      }
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.05em;
+      margin: 0;
+      padding: 0;
+
+      small {
+        display: block;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: -0.025em;
+      }
+    }
+  }
+
+  div.card-description {
+    padding: 0 15px 10px;
+    position: relative;
+    font-size: 14px;
+  }
+
+  div.card-actions {
+  	box-shadow: 0 2px 0px 0 rgba(0,0,0,0.075);
+    padding: 10px 15px 20px;
+    text-align: center;
+  }
+
+  div.card-flap {
+    background: darken(@white,15);
+    position: absolute;
+    width: 100%;
+    transform-origin: top;
+    transform: rotateX(-90deg);
+  }
+  div.flap1 {
+    transition: all 0.3s 0.3s ease-out;
+    z-index: -1;
+  }
+  div.flap2 {
+    transition: all 0.3s 0s ease-out;
+    z-index: -2;
+  }
+
+}
+
+div.cards.showing {
+  div.card {
+    cursor: pointer;
+    opacity: 0.6;
+    transform: scale(0.88);
+  }
+}
+
+.no-touch  div.cards.showing {
+  div.card:hover {
+    opacity: 0.94;
+    transform: scale(0.92);
+  }
+}
+
+div.card.show {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+
+  div.card-title {
+    a.toggle-info {
+      background: @salmon !important;
+      span {
+        top: 15px;
+      }
+      span.left {
+        right: 10px;
+      }
+      span.right {
+        left: 10px;
+      }
+    }
+  }
+  div.card-flap {
+    background: @white;
+    transform: rotateX(0deg);
+  }
+  div.flap1 {
+    transition: all 0.3s 0s ease-out;
+  }
+  div.flap2 {
+    transition: all 0.3s 0.2s ease-out;
+  }
+}
+
+
+
+
+</style>
+  </head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+</head>
+<section>
+
+</div>
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li>About me</li>
+    <li><a href="Portifolio.html">Portfolio</a></li>
+    <li>Blog</li>
+    <li><a href="contato.html">Contact me</a></li>
+    <li class="slide"></li>
+  </ul>
+</nav>
+<img  class="img-fluid" src="./img/bayer.png" alt="">
+
+</section>
+
+
+$(document).ready(function(){
+  var zindex = 10;
+
+  $("div.card").click(function(e){
+    e.preventDefault();
+
+    var isShowing = false;
+
+    if ($(this).hasClass("show")) {
+      isShowing = true
+    }
+
+    if ($("div.cards").hasClass("showing")) {
+      // a card is already in view
+      $("div.card.show")
+        .removeClass("show");
+
+      if (isShowing) {
+        // this card was showing - reset the grid
+        $("div.cards")
+          .removeClass("showing");
+      } else {
+        // this card isn't showing - get in with it
+        $(this)
+          .css({zIndex: zindex})
+          .addClass("show");
+
+      }
+
+      zindex++;
+
+    } else {
+      // no cards in view
+      $("div.cards")
+        .addClass("showing");
+      $(this)
+        .css({zIndex:zindex})
+        .addClass("show");
+
+      zindex++;
+    }
+
+  });
+});
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>
