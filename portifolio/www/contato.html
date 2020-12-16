@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<link rel="stylesheet" href="./css/CSS.css">
+    <title>fabricio minowa</title>
+
+<style >
+a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+  }
+  ::selection {
+    background-color: #f7ca18;
+    color: #1b1b1b;
+  }
+  nav {
+    width: 100%;
+    background-color: #0b0b0b;
+    position: fixed;
+    bottom: 0;
+    height: 100px;
+    overflow: hidden;
+  }
+  nav ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 140vw;
+  }
+  nav li {
+    margin: 0;
+    float: left;
+    display: inline-block;
+    height: 98px;
+    margin-bottom: 2px;
+    line-height: 100px;
+    width: 20vw;
+    text-align: center;
+    color: #555;
+    transition: background-color 0.5s 0.2s ease, color 0.3s ease;
+    cursor: pointer;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 800;
+    transform: translateY(100%);
+  }
+  nav li.active {
+    background-color: #151515;
+    color: #efefef;
+  }
+  nav li.active::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #f7ca18;
+  }
+  nav li:nth-child(1) {
+    animation: pop 0.5s 0.15s 1 forwards;
+  }
+  nav li:nth-child(2) {
+    animation: pop 0.5s 0.3s 1 forwards;
+  }
+  nav li:nth-child(3) {
+    animation: pop 0.5s 0.45s 1 forwards;
+  }
+  nav li:nth-child(4) {
+    animation: pop 0.5s 0.6s 1 forwards;
+  }
+  nav li:nth-child(5) {
+    animation: pop 0.5s 0.75s 1 forwards;
+  }
+  nav li:nth-child(6) {
+    animation: pop 0.5s 0.9s 1 forwards;
+  }
+  nav li:nth-child(7) {
+    animation: pop 0.5s 1.05s 1 forwards;
+  }
+  nav li:hover {
+    color: #ececec;
+  }
+  nav li:active {
+    background-color: #222;
+  }
+  nav li:nth-child(1):hover ~ .slide {
+    left: 0;
+  }
+  nav li:nth-child(2):hover ~ .slide {
+    left: 20vw;
+  }
+  nav li:nth-child(3):hover ~ .slide {
+    left: 40vw;
+  }
+  nav li:nth-child(4):hover ~ .slide {
+    left: 60vw;
+  }
+  nav li:nth-child(5):hover ~ .slide {
+    left: 80vw;
+  }
+  nav li:nth-child(6):hover ~ .slide {
+    left: 100vw;
+  }
+  nav li:nth-child(7):hover ~ .slide {
+    left: 120vw;
+  }
+  nav li.slide {
+    position: absolute;
+    left: -20vw;
+    top: 0;
+    background-color: #fff;
+    z-index: -1;
+    height: 2px;
+    margin-top: 98px;
+    transition: left 0.3s ease;
+    transform: translateY(0);
+  }
+  section {
+    background-color: #1b1b1b;
+    height: 100vh;
+    display: flex;
+  }
+  section .title {
+    max-width: 60%;
+    width: 100%;
+    align-self: center;
+    transform: translateY(-50px);
+    margin: 0 auto;
+    overflow: hidden;
+    padding-bottom: 10px;
+  }
+  section .title span {
+    display: inline-block;
+    font-size: 5vw;
+    color: #efefef;
+    width: 100%;
+    text-transform: uppercase;
+    transform: translateX(-100%);
+    animation: byBottom 1s ease both;
+    font-weight: 600;
+    letter-spacing: 0.25vw;
+  }
+  section .title span:last-child {
+    font-size: 1rem;
+    animation: byBottom 1s 0.25s ease both;
+  }
+  section .title span a {
+    position: relative;
+    display: inline-block;
+    margin-left: 0.5rem;
+    text-decoration: none;
+    color: #f7ca18;
+  }
+  section .title span a::after {
+    content: "";
+    height: 2px;
+    background-color: #f7ca18;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0;
+    animation: linkAfter 0.5s 1s ease both;
+  }
+  @-moz-keyframes pop {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @-webkit-keyframes pop {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @-o-keyframes pop {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes pop {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @-moz-keyframes byBottom {
+    0% {
+      transform: translateY(150%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @-webkit-keyframes byBottom {
+    0% {
+      transform: translateY(150%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @-o-keyframes byBottom {
+    0% {
+      transform: translateY(150%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes byBottom {
+    0% {
+      transform: translateY(150%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @-moz-keyframes linkAfter {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 30px;
+    }
+  }
+  @-webkit-keyframes linkAfter {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 30px;
+    }
+  }
+  @-o-keyframes linkAfter {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 30px;
+    }
+  }
+  @keyframes linkAfter {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 30px;
+    }
+  }
+
+  @import "http://fontawesome.io/assets/font-awesome/css/font-awesome.css";
+  body
+  {
+  	background: #fafafa;
+  }
+  .container
+  {
+    width:800px;
+    height:100%;
+    display:block;
+    margin:0px auto;
+    overflow:hidden;
+
+  }
+  .box
+  {
+    position:relative;
+    padding:10px 10px 70px;
+    margin:50px auto auto 50px;
+    width:300px;
+    height:auto;
+    display:block;
+    border:1px solid #A74300 ;
+    background-color:#fff;
+  }
+  .box .fa
+  {
+    display:inline-block;
+    font-family:FontAwesome;
+    font-style:normal;
+    font-weight:normal;
+    line-height:1;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    border:3px solid #A74300;
+    border-radius:80px;
+    padding:5px 0px 3px;
+    width:30px;height:21px;
+    text-align:center;
+    color:#A74300;
+    position:absolute;
+  }
+  .box .fa-instagram
+  {
+    right:180px;bottom:20px;
+  }
+  .box .fa-dribbble
+  {
+    right:140px;bottom:20px;
+  }
+  .box .fa-github
+  {
+    right:100px;bottom:20px;
+  }
+  .box .fa-twitter
+  {
+    right:60px;bottom:20px;
+  }
+  .box .fa-facebook
+  {
+    right:20px;bottom:20px;
+  }
+  .box .sombraPin
+  {
+    width:750px;
+    height:400px;
+    display:block;
+    position:absolute;
+    z-index:1;top:140px;
+    background:url(https://www.ricardowebsite.com.br/codepen/mapaFundoPinSombra.png) left top no-repeat;
+    background-size:290px;
+    left:310px;
+    -webkit-animation:levitatePin 4s ease-in-out infinite alternate both;
+    -moz-animation:levitatePin 4s ease-in-out infinite alternate both;
+    -ms-animation:levitatePin 4s ease-in-out infinite alternate both;
+    -o-animation:levitatePin 4s ease-in-out infinite alternate both;
+    animation:levitatePin 4s ease-in-out infinite alternate both;
+  }
+  .box:before
+  {
+    content:"";
+    width:300px;
+    height:390px;
+    display:block;
+    position:absolute;z-index:2;
+    background:url(https://www.ricardowebsite.com.br/codepen/pin.png) left top no-repeat;
+    top:30px;
+    left:240px;
+    background-size:210px;
+    -webkit-animation:levitate 4s ease-in-out infinite alternate both;
+    -moz-animation:levitate 4s ease-in-out infinite alternate both;
+    -ms-animation:levitate 4s ease-in-out infinite alternate both;
+    -o-animation:levitate 4s ease-in-out infinite alternate both;
+    animation:levitate 4s ease-in-out infinite alternate both;
+  }
+   .box:after
+  {
+    content:"";
+    width:750px;
+    height:400px;
+    display:block;
+    position:absolute;
+    overflow:hidden;
+    z-index:-1;
+    top:140px;
+    left:0px;
+    //border:1px solid red; background:url(https://www.ricardowebsite.com.br/codepen/mapaFundoPin.png) left top no-repeat;
+    background-size:750px;
+  }
+   .box h1
+  {
+     color:#000;font:35px/21px "Open Sans Condensed",sans-serif;
+    height:30px;
+    text-align:center;
+    padding:10px;
+  }
+   .box strong
+  {
+    color:#A74300;
+    font:17px/21px "Open Sans Condensed",sans-serif;
+    height:auto;
+    text-align:left;
+    padding:0px 10px;
+    font-weight:bold;
+    display:block;
+    margin:0px;
+
+  }
+   .box p
+  {
+     color:#000 !important;
+    font:20px/21px "Open Sans Condensed",sans-serif;
+    height:auto;
+    text-align:left;
+    padding:0px 10px;
+    display:block;
+    margin:10px 0px;
+  }
+   .box a
+  {
+    color:#f26201 ;
+    font:20px/21px "Open Sans Condensed",sans-serif;
+    height:auto;
+    text-align:left;
+    padding:0px 10px;
+    text-decoration:underline;
+    display:block;
+  }
+
+  /****************
+  |   Animacao   |
+  ****************/
+  @-webkit-keyframes levitate
+  {
+    0%{-webkit-transform:translateY(-18px);}
+    100%{-webkit-transform:translateY(18px);}
+  }
+  @-moz-keyframes levitate
+  {
+    0%{-moz-transform:translateY(-18px);}
+    100%{-moz-transform:translateY(18px);}
+  }
+  @-o-keyframes levitate
+  {
+    0%{-o-transform:translateY(-18px);}
+    100%{-o-transform:translateY(18px);}
+  }
+  @keyframes levitate{
+    0%{transform:translateY(-18px);}
+    100%{transform:translateY(18px);}
+  }
+
+  @-webkit-keyframes levitatePin
+  {
+    0%
+    {
+      -webkit-transform:translateY(-30px);
+      -webkit-transform:translateX(30px);
+      background-size:250px;
+    }
+    100%
+    {
+      -webkit-transform:translateY(30px);
+      -webkit-transform:translateX(0px);
+      background-size:290px;
+    }
+  }
+  @-moz-keyframes levitatePin
+  {
+    0%
+    {
+      -moz-transform:translateY(-18px);
+      -moz-transform:translateX(30px);
+      background-size:250px;
+    }
+    100%
+    {
+      -moz-transform:translateY(18px);
+      -moz-transform:translateX(0px);
+      background-size:290px;
+    }
+  }
+  @-o-keyframes levitatePin
+  {
+    0%
+    {
+      -o-transform:translateY(-18px);
+      -o-transform:translateX(30px);
+      background-size:250px;
+    }
+    100%
+    {-o-transform:translateY(18px);
+      -o-transform:translateX(0px);
+      background-size:290px;
+    }
+  }
+  @keyframes levitatePin
+  {
+    0%
+    {
+      transform:translateY(-18px);
+      transform:translateX(30px);
+      background-size:250px;
+    }
+    100%
+    {
+      transform:translateY(18px);
+      transform:translateX(0px);
+      background-size:290px;
+    }
+  }
+</style>
+  </head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+</head>
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li>About me</li>
+    <li>Portfolio</li>
+    
+    <li>Contact me</li>
+    <li class="slide"></li>
+  </ul>
+</nav>
+<body class="bg-dark">
+
+
+    <div class="box">
+      <h1>Meus contatos</h1>
+
+      <strong>Fone: </strong>
+      <p>(11) 96675-6431</p>
+
+      <strong>WEBSiTE: </strong>
+      <p><a href="" target="_blank"></a></p>
+
+      <strong>Email: </strong>
+      <p>fabriciominowa12@gmail.com</p>
+
+      <strong>discord </strong>
+      <p></p>
+
+      <strong>Endereço:</strong>
+      <p>Rua joão de castilho pinto,são paulo, cep 08120-370</p>
+
+      <a href="https://goo.gl/maps/Lz5NZ" target="_blank">Veja no Google Mapa</a>
+      <div class="sombraPin"></div>
+      <a href="https://www.facebook.com/fabriciominowa.minowa" target="_blank"><i class="fa fa-facebook"></i></a>
+      <a href="https://twitter.com/fabriciominowa" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="" target="_blank"><i class="fa fa-github"></i></a>
+      <a href="https://www.instagram.com/conscientegames/" target="_blank"><i class="fa fa-instagram"></i></a>
+      <a href="" target="_blank"><i class="fa fa-dribbble"></i></a>
+    </div>
+  </div>
+
+</body>
+</html>
