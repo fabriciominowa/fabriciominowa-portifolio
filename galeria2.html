@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="pt-br">
   <head>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+<meta name="description" content=" bem-vindo. aqui você vai encontrar projetos Web e jogos produzido por min">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 <link rel="stylesheet" href="./css/CSS.css">
@@ -44,7 +44,7 @@ a {
     width: 140vw;
   }
   nav li {
-    margin: 0;
+    margin:10px;
     float: left;
     display: inline-block;
     height: 98px;
@@ -55,11 +55,12 @@ a {
     color: #555;
     transition: background-color 0.5s 0.2s ease, color 0.3s ease;
     cursor: pointer;
-    font-size: 12px;
+    font-size:14px;
     text-transform: uppercase;
-    letter-spacing: 4px;
-    font-weight: 800;
+    letter-spacing: 0px;
+    font-weight:0px;
     transform: translateY(100%);
+  }
   }
   nav li.active {
     background-color: #151515;
@@ -489,67 +490,49 @@ div.card.show {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 </head>
 <section>
-
+  <div class="card-group" style="width: 3; height:0rem;">
+  <div class="card">
+    <img class="card-img-top" style="height: 12rem" src="./img/bayer.png" alt="Imagem de capa do card">
+    <div class="card-body">
+      <h5 class="card-title">(011).Lab</h5>
+      <p class="card-text">jogo desenvolvido para o challenge da fiap em 2019. </p>
+        <p class="card-text">jogo desenvolvido com unity e c#. </p>
+      <a href="https://011lab.prefeitura.sp.gov.br/" class="btn btn-primary">Visitar</a>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="./img/copicola.png" alt="Imagem de capa do card">
+    <div class="card-body">
+      <h5 class="card-title">copicola</h5>
+      <p class="card-text">Site desenvolvido para Secretaria de Inovação e Tecnologia .</p>
+      <p class="card-text">Site desenvolvido com html, css, javascript,bootstrap4 e adobe xd. </p>
+      <a href="https://copicola.prefeitura.sp.gov.br/copicola/home#" class="btn btn-primary">Visitar</a>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="./img/port.png" alt="Imagem de capa do card">
+    <div class="card-body">
+      <h5 class="card-title">Portfolio</h5>
+      <p class="card-text">Minha propria aplicação web desenvolvido como Portfolio.</p>
+      <p class="card-text">Site desenvolvido com html, css, javascript,bootstrap4 e adobe phonegap </p>
+    <a href="#" class="btn btn-primary">Visitar</a>
+    </div>
 </div>
 <nav>
   <ul>
     <li><a href="index.html">Home</a></li>
-    <li>About me</li>
-    <li><a href="Portifolio.html">Portfolio</a></li>
-    <li>Blog</li>
-    <li><a href="contato.html">Contact me</a></li>
+
+    <li><a href="galeria.html">(Web)</a></li>
+      <li><a href="galeria.html">(jogos)</a></li>
+      <li><a href="contato.html" class="text-center">Contact me</a></li>
     <li class="slide"></li>
   </ul>
 </nav>
-<img  class="img-fluid" src="./img/bayer.png" alt="">
+
 
 </section>
 
 
-$(document).ready(function(){
-  var zindex = 10;
-
-  $("div.card").click(function(e){
-    e.preventDefault();
-
-    var isShowing = false;
-
-    if ($(this).hasClass("show")) {
-      isShowing = true
-    }
-
-    if ($("div.cards").hasClass("showing")) {
-      // a card is already in view
-      $("div.card.show")
-        .removeClass("show");
-
-      if (isShowing) {
-        // this card was showing - reset the grid
-        $("div.cards")
-          .removeClass("showing");
-      } else {
-        // this card isn't showing - get in with it
-        $(this)
-          .css({zIndex: zindex})
-          .addClass("show");
-
-      }
-
-      zindex++;
-
-    } else {
-      // no cards in view
-      $("div.cards")
-        .addClass("showing");
-      $(this)
-        .css({zIndex:zindex})
-        .addClass("show");
-
-      zindex++;
-    }
-
-  });
-});
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
