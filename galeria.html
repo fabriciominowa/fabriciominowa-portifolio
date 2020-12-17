@@ -1,17 +1,26 @@
 <!doctype html>
 <html lang="pt-br">
   <head>
-
+    <meta name="description" content=" bem-vindo. aqui você vai encontrar projetos Web e jogos produzido por min">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-<link rel="stylesheet" href="./css/CSS.css">
+<link rel="stylesheet" href="./css/index.css">
     <title>fabricio minowa</title>
 
 <style >
+@media screen and (min-width: 1520px) and (max-width: 767px) and (orientation: landscape){
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
 a {
     color: inherit;
     text-decoration: inherit;
@@ -55,10 +64,10 @@ a {
     color: #555;
     transition: background-color 0.5s 0.2s ease, color 0.3s ease;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 14px;
     text-transform: uppercase;
-    letter-spacing: 4px;
-    font-weight: 800;
+    letter-spacing: 0px;
+    font-weight: px;
     transform: translateY(100%);
   }
   nav li.active {
@@ -489,72 +498,60 @@ div.card.show {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 </head>
 <section>
+  <div class="card-group" style="width: ; height:9rem;">
+  <div class="card">
+    <img class="card-img-top" src="./img/lab.png" alt="site (011).Lab">
+    <div class="card-body">
+      <h5 class="card-title">(011).Lab</h5>
+      <p class="card-text">Site desenvolvido para o laboratório de inovação em governo. </p>
+        <p class="card-text">Site desenvolvido com html, css, javascript,bootstrap4 e adobe xd. </p>
+      <a href="https://011lab.prefeitura.sp.gov.br/" class="btn btn-primary">Visitar</a>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="./img/copicola.png" alt="site Copicola">
+    <div class="card-body">
+      <h5 class="card-title">copicola</h5>
+      <p class="card-text">Site desenvolvido para Secretaria de Inovação e Tecnologia .</p>
+      <p class="card-text">Site desenvolvido com html, css, javascript,bootstrap4 e adobe xd. </p>
+      <a href="https://copicola.prefeitura.sp.gov.br/copicola/home#" class="btn btn-primary">Visitar</a>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="./img/port.png" alt="Portfolio">
+    <div class="card-body">
+      <h5 class="card-title">Portfolio</h5>
+      <p class="card-text">Minha propria aplicação web desenvolvido como Portfolio.</p>
+      <p class="card-text">Site desenvolvido com html, css, javascript,bootstrap4 e adobe phonegap </p>
+    <a href="#" class="btn btn-primary">Visitar</a>
+    </div>
+  </div>
+</div>
+
 
 </div>
 <nav>
   <ul>
     <li><a href="index.html">Home</a></li>
-    <li>About me</li>
-    <li><a href="Portifolio.html">Portfolio</a></li>
-    <li>Blog</li>
+
+    <li><a href="galeria.html">(Web)</a></li>
+      <li><a href="galeria2.html">(jogos)</a></li>
     <li><a href="contato.html">Contact me</a></li>
     <li class="slide"></li>
   </ul>
 </nav>
-<img  class="img-fluid" src="./img/bayer.png" alt="">
 
 </section>
 
 
-$(document).ready(function(){
-  var zindex = 10;
 
-  $("div.card").click(function(e){
-    e.preventDefault();
-
-    var isShowing = false;
-
-    if ($(this).hasClass("show")) {
-      isShowing = true
-    }
-
-    if ($("div.cards").hasClass("showing")) {
-      // a card is already in view
-      $("div.card.show")
-        .removeClass("show");
-
-      if (isShowing) {
-        // this card was showing - reset the grid
-        $("div.cards")
-          .removeClass("showing");
-      } else {
-        // this card isn't showing - get in with it
-        $(this)
-          .css({zIndex: zindex})
-          .addClass("show");
-
-      }
-
-      zindex++;
-
-    } else {
-      // no cards in view
-      $("div.cards")
-        .addClass("showing");
-      $(this)
-        .css({zIndex:zindex})
-        .addClass("show");
-
-      zindex++;
-    }
-
-  });
-});
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    </script>
   </body>
 </html>
